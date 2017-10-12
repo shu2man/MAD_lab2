@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="26dp" />
+        app:layout_constraintGuide_begin="26dp"
+        tools:layout_editor_absoluteY="26dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/glv"
@@ -20,7 +22,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5"
-        />
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="192dp" />
 
     <TextView android:id="@+id/header"
         android:layout_width="wrap_content"
@@ -30,12 +33,13 @@
         android:textColor="@color/RealDark"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <ImageView android:id="@+id/imgsysu"
+    <ImageButton android:id="@+id/imgsysu"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/sysu"
+        android:background="@drawable/sysu"
+        android:onClick="imgClick"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
@@ -45,57 +49,62 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
-    <TextView android:id="@+id/studentid"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/studentidholder"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/studentid"
-        android:textColor="@color/RealDark"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/imgsysu"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/edit_sid"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp" />
-
-    <EditText android:id="@+id/edit_sid"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_sid"
-        android:textColor="@color/hint_graydark"
-        android:textSize="18sp"
-        android:inputType="number"
         app:layout_constraintTop_toBottomOf="@+id/imgsysu"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/studentid"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"/>
-
-    <TextView android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:textColor="@color/RealDark"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/edit_sid"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/edit_psw"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"/>
-
-    <EditText android:id="@+id/edit_psw"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_psw"
-        android:textColor="@color/hint_graydark"
-        android:textSize="18sp"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/edit_sid"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/password"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+        <EditText android:id="@+id/studentid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_sid"
+            android:textColor="@color/hint_graydark"
+            android:textSize="18sp"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@+id/imgsysu"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/studentidholder"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+        <EditText android:id="@+id/edit_psw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_psw"
+            android:textColor="@color/hint_graydark"
+            android:textSize="18sp"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/edit_sid"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
 
     <RadioGroup android:id="@+id/rg1"
         android:layout_width="wrap_content"
@@ -103,8 +112,8 @@
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_psw"
-        android:layout_marginTop="20dp">
+        app:layout_constraintTop_toBottomOf="@+id/passwordholder"
+        android:layout_marginTop="10dp">
         <RadioButton android:id="@+id/student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,12 +133,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_in"
+        android:onClick="singInClick"
         android:textColor="@color/RealWhite"
         android:background="@drawable/buttonfilling"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
         app:layout_constraintRight_toLeftOf="@+id/glv"
-        app:layout_constraintTop_toBottomOf="@id/rg1" />
+        app:layout_constraintTop_toBottomOf="@+id/rg1" />
     <Button android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -138,7 +148,7 @@
         android:background="@drawable/buttonfilling"
         android:layout_marginTop="20dp"
         android:layout_marginStart="5dp"
-        app:layout_constraintTop_toBottomOf="@id/rg1"
-        app:layout_constraintLeft_toRightOf="@id/glv" />
+        app:layout_constraintTop_toBottomOf="@+id/rg1"
+        app:layout_constraintLeft_toLeftOf="@+id/glv" />
 
 </android.support.constraint.ConstraintLayout>

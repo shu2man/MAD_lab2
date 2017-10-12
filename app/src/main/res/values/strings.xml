@@ -4,7 +4,7 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="header">中山大学学生信息系统</string>
-    <string name="edit_sid">请输入学号</string>
+    <string name="edit_sid">请输入学号或教工号</string>
     <string name="edit_psw">请输入密码</string>
     <string name="studentid">学号:</string>
     <string name="password">密码:</string>
