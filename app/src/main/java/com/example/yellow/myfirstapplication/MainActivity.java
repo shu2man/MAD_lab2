@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     String chosen="学生";
+    //something wrong here
     public void rdgpClick(View target){
         RadioGroup rdgp=(RadioGroup) findViewById(R.id.rg1);
         rdgp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
