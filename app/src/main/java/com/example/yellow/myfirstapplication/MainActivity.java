@@ -61,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 }}).show();
     }
 
+    public void errorEnableToFalse(View target){
+        TextInputLayout idinput=(TextInputLayout) findViewById(R.id.studentidholder);
+        TextInputLayout pswinput=(TextInputLayout) findViewById(R.id.passwordholder);
+        idinput.setErrorEnabled(false);
+        pswinput.setErrorEnabled(false);
+    }
+
     public void signInClick(View target){
         TextInputLayout idinput=(TextInputLayout) findViewById(R.id.studentidholder);
         TextInputLayout pswinput=(TextInputLayout) findViewById(R.id.passwordholder);
